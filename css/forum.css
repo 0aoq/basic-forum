@@ -186,7 +186,7 @@ a:not(.thread-btn, .btn, .forum-nav-btn):hover::before {
 }
 
 
-/* MARKDOWN */
+/* Markdown */
 
 pre:not(.ignore-style) {
     background: rgb(248, 248, 248);
