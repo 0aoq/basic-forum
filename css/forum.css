@@ -86,11 +86,6 @@ a:not(.thread-btn, .btn, .forum-nav-btn) {
     transition: background 1.2s, padding 0.4s;
 }
 
-a:not(.thread-btn, .btn, .forum-nav-btn):hover {
-    padding-left: 15px;
-    padding-right: 15px;
-}
-
 a:not(.thread-btn, .btn, .forum-nav-btn)::after {
     border-radius: 1em;
     border-top: .15em solid rgb(90, 44, 255);
@@ -123,6 +118,13 @@ a:not(.thread-btn, .btn, .forum-nav-btn):hover::before {
 
 .page-container {
     width: 60%;
+}
+
+@media screen and (min-width: 500px) {
+    a:not(.thread-btn, .btn, .forum-nav-btn):hover {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
 }
 
 @media screen and (max-width: 500px) {
