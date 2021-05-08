@@ -88,7 +88,13 @@
     </script>
     <script>
         function deleteThread(thread) {
-            delete threads[thread]
+            threads[thread] = {
+                title: "[removed]",
+                content: "[removed]",
+                date: "(Removed Date) " + new Date().toLocaleString(),
+                locked: true,
+            }
+
             localStorage.setItem('threads', JSON.stringify(threads));
             window.location.reload()
         }
