@@ -1,0 +1,200 @@
+.background {
+    z-index: 3;
+    position: relative;
+    background: linear-gradient(45deg, rgb(90, 44, 255), rgb(138, 107, 252));
+    padding: 10em;
+    -webkit-box-shadow: 0 2px 3px -1px rgb(0 0 0 / 10%), 0 3px 5px 0 rgb(0 0 0 / 5%), 0 0.5px 9px 0 rgb(0 0 0 / 13%);
+    box-shadow: 0 2px 3px -1px rgb(0 0 0 / 10%), 0 3px 5px 0 rgb(0 0 0 / 5%), 0 1px 9px 0 rgb(0 0 0 / 13%);
+}
+
+.thread {
+    margin-top: -15em;
+    width: 100%;
+    z-index: 5;
+    position: absolute;
+}
+
+
+/* Comments */
+
+.comments .comment {
+    margin-top: 10px;
+}
+
+.comment__date {
+    margin-left: 5px;
+}
+
+
+/* Nav */
+
+.forum-nav-btn {
+    padding: 20px;
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    transition: all 0.15s;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+}
+
+.forum-nav-btn:hover {
+    background: #fff;
+    color: black;
+    -webkit-box-shadow: 0 2px 3px -1px rgb(0 0 0 / 10%), 0 3px 5px 0 rgb(0 0 0 / 5%), 0 0.5px 9px 0 rgb(0 0 0 / 13%);
+    box-shadow: 0 2px 3px -1px rgb(0 0 0 / 10%), 0 3px 5px 0 rgb(0 0 0 / 5%), 0 1px 9px 0 rgb(0 0 0 / 13%);
+}
+
+.forum-nav-btn.active {
+    background: #fff;
+    color: black;
+    -webkit-box-shadow: 0 2px 3px -1px rgb(0 0 0 / 10%), 0 3px 5px 0 rgb(0 0 0 / 5%), 0 0.5px 9px 0 rgb(0 0 0 / 13%);
+    box-shadow: 0 2px 3px -1px rgb(0 0 0 / 10%), 0 3px 5px 0 rgb(0 0 0 / 5%), 0 1px 9px 0 rgb(0 0 0 / 13%);
+}
+
+
+/* Buttons */
+
+.thread-btn {
+    padding: 15px;
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    transition: all 0.15s;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    padding-left: 100px;
+    padding-right: 100px;
+    border-radius: 0.5em;
+    background: rgb(90, 44, 255);
+}
+
+.thread-btn:hover {
+    background: #fff;
+    color: black;
+    -webkit-box-shadow: 0 2px 3px -1px rgb(0 0 0 / 10%), 0 3px 5px 0 rgb(0 0 0 / 5%), 0 0.5px 9px 0 rgb(0 0 0 / 13%);
+    box-shadow: 0 2px 3px -1px rgb(0 0 0 / 10%), 0 3px 5px 0 rgb(0 0 0 / 5%), 0 1px 9px 0 rgb(0 0 0 / 13%);
+}
+
+
+/* Links */
+
+a:not(.thread-btn, .btn, .forum-nav-btn) {
+    color: rgb(90, 44, 255);
+    text-decoration: none;
+    position: relative;
+    transition: background 1.2s, padding 0.4s;
+}
+
+a:not(.thread-btn, .btn, .forum-nav-btn):hover {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+a:not(.thread-btn, .btn, .forum-nav-btn)::after {
+    border-radius: 1em;
+    border-top: .15em solid rgb(90, 44, 255);
+    content: "";
+    position: absolute;
+    right: 100%;
+    bottom: .005em;
+    left: 0;
+    transition: right .4s cubic-bezier(0, .5, 0, 1);
+}
+
+a:not(.thread-btn, .btn, .forum-nav-btn)::before {
+    border-radius: 1em;
+    border-top: .15em solid rgb(90, 44, 255);
+    content: "";
+    position: absolute;
+    left: 100%;
+    right: 0;
+    top: .005em;
+    transition: left .4s cubic-bezier(0, .5, 0, 1);
+}
+
+a:not(.thread-btn, .btn, .forum-nav-btn):hover::after {
+    right: 0;
+}
+
+a:not(.thread-btn, .btn, .forum-nav-btn):hover::before {
+    left: 0;
+}
+
+.page-container {
+    width: 60%;
+}
+
+@media screen and (max-width: 500px) {
+    .page-container {
+        width: 100%;
+    }
+}
+
+
+/* Modal */
+
+
+/* The Modal (background) */
+
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 5;
+    /* Sit on top */
+    padding-top: 100px;
+    /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: scroll;
+}
+
+
+/* Modal Content */
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    margin-bottom: 100px;
+    padding: 20px;
+    width: 80%;
+    -webkit-box-shadow: 0 2px 3px -1px rgb(0 0 0 / 10%), 0 3px 5px 0 rgb(0 0 0 / 5%), 0 0.5px 9px 0 rgb(0 0 0 / 13%);
+    box-shadow: 0 2px 3px -1px rgb(0 0 0 / 10%), 0 3px 5px 0 rgb(0 0 0 / 5%), 0 1px 9px 0 rgb(0 0 0 / 13%);
+}
+
+
+/* The Close Button */
+
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+/* MARKDOWN */
+
+pre:not(.ignore-style) {
+    background: rgb(248, 248, 248);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+blockquote:not(.ignore-style) {
+    border-left: lightgray solid 2px;
+    padding-left: 10px;
+}

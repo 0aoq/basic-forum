@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post</title>
+
+    <link rel="stylesheet" href="https://c-zero.web.app/css/grid.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/forum.css">
+
+    <script src="https://c-zero.web.app/js/brickjs.js"></script>
+</head>
+
+<body class="light">
+    <div class="grid-full-wide background"></div>
+
+    <div class="thread" style="margin-top: -17em;">
+        <div class="page-container">
+            <div class="forum-nav">
+                <a href="index.html" class="forum-nav-btn">Home</a>
+                <a href="threads.html" class="forum-nav-btn">All Threads</a>
+                <a href="account.html" class="forum-nav-btn">Account</a>
+            </div>
+        </div>
+    </div>
+    <div class="thread" id="thread">
+        <div class="page-container">
+            <div class="card">
+                <div class="content">
+                    <header style="text-align: center;">
+                        <h1>All Threads</h1>
+                        <span>Announcements, Community Discussions, Every, single, thread.</span>
+                        <a onclick="localStorage.setItem('threads', JSON.stringify(defaultThreads));">Reset All Threads</a>
+                    </header>
+
+                    <article style="margin-top: 50px;" id="threads"></article>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script>
+        var container = find("#threads")
+        for (let thread of threads) {
+            var html = `
+                        <div class="card effect">
+                            <div class="content">
+                                <h3 style="display: inline-block;">${thread.title}</h3>
+                                <span style="margin-right: 20px; color: gray;">${thread.date}</span>
+                                <a href="thread.html?${thread.id}">View Thread</a>
+                            </div>
+                        </div>
+            `
+            container.insertAdjacentHTML('beforeend', html)
+        }
+    </script>
+</body>
+
+</html>

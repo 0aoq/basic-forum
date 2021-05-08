@@ -1,0 +1,42 @@
+<div class="page-container" style="display: flex; gap: 1em;">
+            <div class="card" style="width: 60%; margin-bottom: 20px;" id="thread">
+                <div class="content">
+                    <header style="text-align: center; margin-bottom: 20px;">
+                        <h1 id="post__title">Thread Title</h1>
+                    </header>
+
+                    <article>
+                        <span>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure earum, praesentium totam vel cum modi ratione ex commodi dignissimos, eius magnam? Eum repellat ipsam reiciendis quia dolorum! Quaerat, tempore ut. Debitis nisi, sed dicta ipsa assumenda dolores quisquam vel distinctio modi aliquid sunt. Sequi officia nulla rem impedit sed fuga veniam perferendis eius vero optio modi doloremque sunt quae quos maiores qui, dolores ullam suscipit itaque ratione ipsa sit hic? Quas, maiores. Eligendi neque delectus minus magni illum optio quisquam!
+                        </span>
+
+                        <div id="comments">
+                            <div class="card comment effect">
+                                <div class="content">
+                                    <a class="comment__name" href="#">TestUser1</a>
+                                    <span class="comment__date" style="color: gray">${'Posted: ' + thread_date}</span>
+                                </div>
+                            </div>
+
+                            <div class="card comment effect">
+                                <div class="content">
+                                    <a class="comment__name" href="#">TestUser1</a>
+                                    <span class="comment__date" style="color: gray">${'Posted: ' + thread_date}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <div style="width: 40%; position: fixed;" id="thread_info">
+                <div class="card">
+                    <div class="content">
+                        <header>
+                            <h3>/thread/Dev/</h3>
+                            <p id="thread__date">${'Started: ' + thread_date}</p>
+                        </header>
+                    </div>
+                </div>
+            </div>
+        </div>
