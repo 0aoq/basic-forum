@@ -195,6 +195,10 @@
 
                 find("#post_comment").reset()
             })
+
+            if (!thread.comments_allowed) {
+                display(find("#comments"), false)
+            }
         }
     </script>
 </body>

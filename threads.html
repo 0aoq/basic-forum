@@ -8,6 +8,7 @@
     <title>Post</title>
 
     <link rel="stylesheet" href="https://c-zero.web.app/css/grid.css">
+    <link rel="stylesheet" href="https://a0oq-main.web.app/s/blockedit/moreforms.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/forum.css">
 
@@ -51,8 +52,18 @@
             <span class="close">&times;</span>
             <form id="post_comment">
                 <h3>Create A Thread</h3>
+
                 <h4>Title (25 Characters Max)</h4>
                 <input type="text" placeholder="Thread Title" name="title" maxlength="25">
+
+                <h4>Extra Options</h4>
+
+                <label class="toggle" style="margin-top: 10px; margin-bottom: 10px;">
+                    <input class="toggle__input" type="checkbox" id="toggle_comments" checked>
+                    <span class="toggle__label">
+                    <span class="toggle__text" style="font-weight: 400;">Allow Comments</span>
+                </label>
+
                 <h4>Content</h4>
                 <p id="characterlimit">0/4000 Characters Max</p>
                 <textarea name="thread_text" placeholder="Thread Text" cols="30" rows="10" id="thread_text" maxlength="4000"></textarea>
@@ -124,6 +135,7 @@
                 date: new Date().toLocaleString(),
                 content: find("#thread_text").value,
                 locked: false,
+                comments_allowed: find("#toggle_comments").checked,
                 comments: []
             }
 
