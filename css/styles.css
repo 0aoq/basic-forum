@@ -389,7 +389,6 @@ details[open] summary:hover {
 input {
     display: block;
     width: 80%;
-    margin: auto;
     padding: .8em;
     font-size: 0.8rem;
     font-weight: 400;

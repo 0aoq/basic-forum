@@ -1,9 +1,10 @@
 var defaultThreads = [{
-        id: 1,
+        id: 0,
         title: "Thread 1",
         author: "Aaron",
         date: new Date().toLocaleString(),
         content: "Thread content",
+        locked: false,
         comments: [{
                 number: 0,
                 author: "Jack",
@@ -19,11 +20,12 @@ var defaultThreads = [{
         ]
     },
     {
-        id: 2,
+        id: 1,
         title: "Thread 2",
         author: "Aaron",
         date: new Date().toLocaleString(),
         content: "Thread content 2",
+        locked: false,
         comments: [{
                 number: 0,
                 author: "Jack",
