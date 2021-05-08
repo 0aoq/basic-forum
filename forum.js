@@ -70,7 +70,7 @@ if (id) {
                     <div class="content">
                         <a class="comment__name" href="#">${comment.author}</a>
                         <span class="comment__date" style="color: gray">${'Posted: ' + comment.date}</span>
-                        <a onclick="removeComment('${comment.number}')" href="#">Remove Comment</a>
+                        <a onclick="removeComment('${comment.number}')" href="#">Remove</a>
 
                         <p>${comment.content}</p>
                     </div>
