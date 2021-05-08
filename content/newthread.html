@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create A Thread</title>
+
+    <link rel="stylesheet" href="https://c-zero.web.app/css/grid.css">
+    <link rel="stylesheet" href="https://a0oq-main.web.app/s/blockedit/moreforms.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/forum.css">
+
+    <script src="https://c-zero.web.app/js/brickjs.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+
+<body class="light">
+    <div class="grid-full-wide background"></div>
+
+    <div class="thread" style="margin-top: -17em;">
+        <div class="page-container">
+            <div class="forum-nav">
+                <a href="index.html" class="forum-nav-btn">Home</a>
+                <a href="threads.html" class="forum-nav-btn">All Threads</a>
+                <a href="account.html" class="forum-nav-btn">Account</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="thread" id="thread">
+        <div class="page-container" style="gap: 1em;" id="main_thread_content">
+            <div class="card" style="margin-bottom: 20px;" id="thread">
+                <div class="content">
+                    <header style="text-align: center; margin-bottom: 20px;">
+                        <h1 id="post__title">Create A Thread</h1>
+                        <span><b>/thread/_/</b> • </span>
+                        <span id="thread__date" style="color: gray;">Started: _</span>
+                    </header>
+                    <article style="margin: auto; text-align: center;">
+                        <form id="post_comment">
+                            <h3>Create A Thread</h3>
+
+                            <h4>Title (25 Characters Max)</h4>
+                            <input type="text" placeholder="Thread Title" name="title" maxlength="25" style="margin: auto;">
+
+                            <h4>Extra Options</h4>
+
+                            <label class="toggle" style="margin-top: 10px; margin-bottom: 10px;">
+                                <input class="toggle__input" type="checkbox" id="toggle_comments" checked>
+                                <span class="toggle__label">
+                                <span class="toggle__text" style="font-weight: 400;">Allow Comments</span>
+                            </label>
+
+                            <h4>Content</h4>
+                            <p id="characterlimit">0/4000 Characters Max</p>
+                            <textarea name="thread_text" placeholder="Thread Text" cols="30" rows="10" id="thread_text" maxlength="4000" style="margin: auto;"></textarea>
+
+                            <button class="thread-btn" href="#" style="margin: auto;">Publish</button>
+                        </form>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../data.js"></script>
+
+    <script>
+        find("#thread_text").addEventListener('input', () => {
+            find("#characterlimit").innerHTML = `${find("#thread_text").value.length}/4000 Characters Max`
+        })
+
+        find("#post_comment").addEventListener('submit', e => {
+            e.preventDefault()
+
+            var thread = {
+                id: threads.length,
+                title: find("#post_comment").title.value,
+                author: "You",
+                date: new Date().toLocaleString(),
+                content: find("#thread_text").value,
+                locked: false,
+                comments_allowed: find("#toggle_comments").checked,
+                comments: []
+            }
+
+            threads.push(thread);
+            localStorage.setItem('threads', JSON.stringify(threads));
+
+            window.location = `../thread.html?${threads.length - 1}`
+
+            find("#post_comment").reset()
+        })
+    </script>
+</body>
+
+</html>
