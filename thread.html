@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Post</title>
+    <title>Thread</title>
+    <meta name="description" content="A thread on this website...">
 
     <link rel="stylesheet" href="https://c-zero.web.app/css/grid.css">
     <link rel="stylesheet" href="css/styles.css">
@@ -163,7 +164,7 @@
                 document.getElementById("comment_modal").style.display = "none"
                 find("#comments").innerHTML += `<div class="card comment effect">
                     <div class="content">
-                        <a class="comment__name" href="#">${comment.author}</a>
+                        <a class="comment__name" href="user.html?0">${comment.author}</a>
                         <span class="comment__date" style="color: gray">${'Posted: ' + comment.date}</span>
                         <a onclick="removeComment('${comment.number}')" href="#">Remove Comment</a>
                         <p>${comment.content}</p>

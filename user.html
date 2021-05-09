@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thread</title>
+    <meta name="description" content="A thread on this website...">
+
+    <link rel="stylesheet" href="https://c-zero.web.app/css/grid.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/forum.css">
+
+    <script src="https://c-zero.web.app/js/brickjs.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+
+<body class="light">
+    <div class="grid-full-wide background"></div>
+
+    <div class="thread" style="margin-top: -17em;">
+        <div class="page-container">
+            <div class="forum-nav">
+                <a href="index.html" class="forum-nav-btn">Home</a>
+                <a href="threads.html" class="forum-nav-btn">All Threads</a>
+                <a href="account.html" class="forum-nav-btn active">Account</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="thread" id="thread">
+        <div class="page-container">
+            <div class="card">
+                <div class="content">
+                    <header style="text-align: center;">
+                        <h1>We Couldn't Find That :(</h1>
+                        <span>That user doesn't exist.</span>
+
+                        <a href="threads.html">All Threads</a>
+                    </header>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="data.js"></script>
+
+    <script>
+        // User Main
+
+        var id = window.location.search.slice(1)
+        var user = users.find(u => u.id == id)
+
+        const getCurrentDate = function() {
+            return new Date().toLocaleString()
+        }
+
+        if (id) {
+            document.title = user.username + ` (/user/${user.id}/)`
+
+            window.localStorage.setItem("dev__user_1", `
+        
+            <div class="page-container" style="gap: 1em;" id="main_thread_content">
+                <div class="card" style="margin-bottom: 20px;" id="thread">
+                    <div class="content">
+                        <header style="text-align: center; margin-bottom: 20px;">
+                            <h1 id="post__title">${user.username}</h1>
+                            <span><b>/user/${user.id}/</b> • </span>
+                            <span id="user__date" style="color: gray;">${'Joined: ' + user.join_date}</span>
+                        </header>
+                        <article>
+                            <span>
+                                ${user.bio}
+                            </span>
+                        </article>
+                    </div>
+                </div>
+            </div>
+            
+            `)
+
+            const html_thread = find('#thread')
+            const content = window.localStorage.getItem("dev__user_1")
+
+            if (content && !thread.locked) {
+                html_thread.innerHTML = content
+            }
+        }
+    </script>
+</body>
+
+</html>
